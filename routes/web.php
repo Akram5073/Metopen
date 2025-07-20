@@ -3,10 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CodeController;
 
-Route::get('/', function () {
-    return view('editor');
-});
-
-Route::post(uri: '/run-code', action: [CodeController::class, 'run']);
-Route::post(uri: '/ai-helper', action: [CodeController::class, 'ai']);
-
+Route::view('/', 'editor');
+Route::post('/run-code', [CodeController::class, 'run']);
+Route::post('/ai-helper', [CodeController::class, 'ai']);
